@@ -1,5 +1,4 @@
 "use client";
-import Home from "@/app/page";
 import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -10,7 +9,6 @@ const Header = () => {
   const openDrawer = () => {
     setOpen(true);
   };
-
   const closeDrawer = () => {
     setOpen(false);
   };
