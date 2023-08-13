@@ -20,3 +20,6 @@ export const theme = {
 };
 
 export type Theme = typeof theme;
+
+type ColorObject = typeof color;
+export type Color = keyof ColorObject;

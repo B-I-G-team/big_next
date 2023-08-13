@@ -22,3 +22,10 @@ Bold.args = {
   children: '본문1',
   bold: true,
 };
+
+export const Color = Template.bind({});
+
+Color.args = {
+  children: '본문1',
+  color: 'blue',
+};

@@ -16,3 +16,10 @@ export const Default = Template.bind({});
 Default.args = {
   children: '제목2',
 };
+
+export const Color = Template.bind({});
+
+Color.args = {
+  children: '제목2',
+  color: 'green',
+};
