@@ -15,11 +15,20 @@ const color = {
   gray_hover: '#EDEDED',
 };
 
+const size = {
+  sm: '100px',
+  md: '140px',
+  fit: '100%',
+};
+
 export const theme = {
   color,
+  size,
 };
 
 export type Theme = typeof theme;
 
 type ColorObject = typeof color;
+type SizeObject = typeof size;
 export type Color = keyof ColorObject;
+export type Size = keyof SizeObject;
