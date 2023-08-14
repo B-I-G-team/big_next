@@ -1,11 +1,11 @@
-import { Size, Color } from '@/styles/theme';
-import { styled, css } from 'styled-components';
+import { SizePrimary } from '@/styles/theme';
+import { styled } from 'styled-components';
 import { ReactChild } from 'react';
 import Body3 from '../../typography/Body3';
 
 export interface Props {
   children: ReactChild;
-  size?: Size;
+  size?: SizePrimary;
   onClick: () => void;
 }
 
@@ -17,7 +17,7 @@ const ButtonPrimary = ({ onClick, children, size = 'md' }: Props) => (
 
 export default ButtonPrimary;
 
-const Button = styled.button<{ size: Size }>`
+const Button = styled.button<{ size: SizePrimary }>`
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ const Button = styled.button<{ size: Size }>`
   border: 0px;
   background-color: ${({ theme }) => theme.color['red_500']};
   height: 40px;
-  width: ${({ theme, size }) => theme.size[size]};
+  width: ${({ theme, size }) => theme.sizePrimary[size]};
 
   &:hover,
   &:active {

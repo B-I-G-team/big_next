@@ -1,16 +1,20 @@
-import { Size, Color } from '@/styles/theme';
+import { SizeGhost } from '@/styles/theme';
 import { styled, css } from 'styled-components';
 import { ReactChild } from 'react';
-import Body3 from '../../typography/Body3';
 
 export interface Props {
   children: ReactChild;
-  size?: Size;
+  size?: SizeGhost;
   disable?: boolean;
   onClick: () => void;
 }
 
-const ButtonGhost = ({ onClick, children, disable, size = 'md' }: Props) => (
+const ButtonGhost = ({
+  onClick,
+  children,
+  disable,
+  size = 'default',
+}: Props) => (
   <Button onClick={onClick} size={size} disable={disable}>
     <ButtonText>{children}</ButtonText>
   </Button>
@@ -18,7 +22,7 @@ const ButtonGhost = ({ onClick, children, disable, size = 'md' }: Props) => (
 
 export default ButtonGhost;
 
-const Button = styled.div<{ size: Size; disable?: boolean }>`
+const Button = styled.div<{ size: SizeGhost; disable?: boolean }>`
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -29,7 +33,7 @@ const Button = styled.div<{ size: Size; disable?: boolean }>`
   background-color: ${({ theme, disable }) =>
     disable ? theme.color['gray_disabled'] : theme.color['white']};
   height: 24px;
-  width: ${({ theme, size }) => theme.size[size]};
+  width: ${({ theme, size }) => theme.sizeGhost[size]};
 
   ${({ disable }) =>
     !disable &&
