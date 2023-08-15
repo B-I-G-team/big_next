@@ -1,31 +1,31 @@
 import { Story } from '@storybook/react';
 import { ReactElement } from 'react';
-import Body1, { Props } from './';
+import Body2, { Props } from './';
 
 export default {
-  title: 'Atom/Typography/Body1',
-  component: Body1,
+  title: 'Atom/Typography/Body2',
+  component: Body2,
   tags: ['autodocs'],
 };
 
-const Template: Story<Props> = (args: Props) => <Body1 {...args} />;
+const Template: Story<Props> = (args: Props) => <Body2 {...args} />;
 
 export const Default = Template.bind({});
 
 Default.args = {
-  children: '본문1',
+  children: '본문2',
 };
 
 export const Bold = Template.bind({});
 
 Bold.args = {
-  children: '본문1_강조',
+  children: '본문2_강조',
   bold: true,
 };
 
 export const Color = Template.bind({});
 
 Color.args = {
-  children: '본문1',
+  children: '본문2',
   color: 'blue',
 };
