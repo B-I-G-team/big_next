@@ -23,7 +23,6 @@ const ButtonGhost = ({
 export default ButtonGhost;
 
 const Button = styled.div<{ size: SizeGhost; disable?: boolean }>`
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +33,11 @@ const Button = styled.div<{ size: SizeGhost; disable?: boolean }>`
     disable ? theme.color['gray_disabled'] : theme.color['white']};
   height: 24px;
   width: ${({ theme, size }) => theme.sizeGhost[size]};
-
+  cursor: not-allowed;
   ${({ disable }) =>
     !disable &&
     css`
-      &:hover,
+      cursor: pointer;
       &:active {
         transform: scale(0.95);
         background-color: ${({ theme }) => theme.color['gray_hover']};
@@ -47,8 +46,11 @@ const Button = styled.div<{ size: SizeGhost; disable?: boolean }>`
 `;
 
 const ButtonText = styled.span`
-  font-size: 12px;
+  font-family: 'Gmarket Sans TTF';
   color: black;
-  line-height: auto;
-  letter-spacing: -2%;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.24px;
 `;

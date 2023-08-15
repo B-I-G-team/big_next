@@ -11,7 +11,7 @@ export interface Props {
 
 const ButtonPrimary = ({ onClick, children, size = 'md' }: Props) => (
   <Button onClick={onClick} size={size}>
-    <Body3 color={'white'}>{children}</Body3>
+    <ButtonText color={'white'}>{children}</ButtonText>
   </Button>
 );
 
@@ -29,9 +29,17 @@ const Button = styled.button<{ size: SizePrimary }>`
   height: 40px;
   width: ${({ theme, size }) => theme.sizePrimary[size]};
 
-  &:hover,
   &:active {
     transform: scale(0.95);
     background-color: ${({ theme }) => theme.color['red_100']};
   }
+`;
+
+const ButtonText = styled.span`
+  font-family: 'Gmarket Sans TTF';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.15px;
+  color: white;
 `;
