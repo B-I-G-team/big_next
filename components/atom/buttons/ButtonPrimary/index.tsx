@@ -28,6 +28,7 @@ const Button = styled.button<{ size: SizePrimary }>`
   background-color: ${({ theme }) => theme.color['red_500']};
   height: 40px;
   width: ${({ theme, size }) => theme.sizePrimary[size]};
+  transition: 200ms;
 
   &:active {
     transform: scale(0.95);
@@ -40,6 +41,6 @@ const ButtonText = styled.span`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: -0.15px;
-  color: white;
+  letter-spacing: -0.154px;
+  color: ${({ theme }) => theme.color.white};
 `;

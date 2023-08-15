@@ -21,7 +21,7 @@ export const Disable = Template.bind({});
 
 Disable.args = {
   children: 'Disable',
-  disable: true,
+  disabled: true,
 };
 
 export const Size = Template.bind({});
