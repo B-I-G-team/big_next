@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import { ReactElement } from 'react';
 import { Props } from './';
 import ButtonGhost from './';
 
@@ -21,7 +20,7 @@ export const Disable = Template.bind({});
 
 Disable.args = {
   children: 'Disable',
-  disable: true,
+  disabled: true,
 };
 
 export const Size = Template.bind({});
