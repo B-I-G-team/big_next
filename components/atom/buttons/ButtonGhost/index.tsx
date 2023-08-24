@@ -1,5 +1,5 @@
 import { SizeGhost } from '@/styles/theme';
-import { styled, css } from 'styled-components';
+import { styled } from 'styled-components';
 import { ReactChild } from 'react';
 
 export interface Props {
@@ -23,7 +23,6 @@ const ButtonGhost = ({
 export default ButtonGhost;
 
 const Button = styled.button<{ size: SizeGhost }>`
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,21 +33,20 @@ const Button = styled.button<{ size: SizeGhost }>`
   height: 24px;
   width: ${({ theme, size }) => theme.sizeGhost[size]};
   transition: 200ms;
-
-  &:enabled:active {
+  cursor: pointer;
+  &:active:not(:disabled) {
     transform: scale(0.95);
     background-color: ${({ theme }) => theme.color['gray_hover']};
   }
 
   &:disabled {
-    cursor: not-allowed;
     background-color: ${({ theme }) => theme.color['gray_disabled']};
   }
 `;
 
 const ButtonText = styled.span`
   font-family: 'Gmarket Sans TTF';
-  color: ${({ theme }) => theme.color.text_500};
+  color: black;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
