@@ -1,4 +1,3 @@
-import { Color } from '@/styles/theme';
 import React from 'react';
 
 const BackIcon = () => {
