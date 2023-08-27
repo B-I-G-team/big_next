@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { ReactChild, useState } from 'react';
-
+import CardIcon from '@/components/icons/CardIcon';
 export interface Props {
   onClick: () => void;
 }
@@ -16,7 +16,7 @@ const ButtonPayCard = ({}: Props) => {
         type="checkbox"
       ></HiddenCheckbox>
       <Button checked={checked} htmlFor="text">
-        <ButtonImg src="icon-card.png" />
+        <CardIcon />
         <ButtonText>일반카드</ButtonText>
       </Button>
     </>
@@ -41,6 +41,7 @@ const Button = styled.label<{ checked: boolean }>`
     checked
       ? `1px solid ${theme.color['text_500']}`
       : `1px solid ${theme.color['border_100']}`};
+  cursor: pointer;
 `;
 
 const ButtonText = styled.span`

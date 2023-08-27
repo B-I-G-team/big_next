@@ -1,29 +1,27 @@
 import { styled } from 'styled-components';
-
+import MenuIcon from '@/components/icons/MenuIcon';
+import Menu from 'Menu.svg';
 export interface Props {
   onClick: () => void;
 }
 
-const ButtonBack = ({ onClick }: Props) => (
+const ButtonMenu = ({ onClick }: Props) => (
   <Button onClick={onClick}>
-    <ButtonImg src="Menu.png"></ButtonImg>
+    <MenuIcon />
   </Button>
 );
 
-export default ButtonBack;
+export default ButtonMenu;
 
 const Button = styled.button`
   cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
   display: flex;
+  border-radius: 4px;
   justify-content: center;
   align-items: center;
-  color: white;
-  border-radius: 4px;
-  border: 0px;
-  background-color: ${({ theme }) => theme.color['white']};
-  height: 28px;
-  width: 28px;
-  transition: 200ms;
   &:active {
     background-color: ${({ theme }) => theme.color['gray_hover']};
   }

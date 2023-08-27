@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { ReactChild, useState } from 'react';
-
+import KakaoIcon from '@/components/icons/KakaoIcon';
 export interface Props {
   onClick: () => void;
 }
@@ -16,7 +16,7 @@ const ButtonPayKakao = ({}: Props) => {
         type="checkbox"
       ></HiddenCheckbox>
       <Button checked={checked} htmlFor="text">
-        <ButtonImg src="KakaoImg.png" />
+        <KakaoIcon />
         <ButtonText>카카오페이</ButtonText>
       </Button>
     </>
@@ -35,10 +35,12 @@ const Button = styled.label<{ checked: boolean }>`
   align-items: center;
   height: 35px;
   border-radius: 8px;
+  padding: 0px;
   gap: 4px;
   background-color: ${({ theme }) => theme.color['kakao']};
   border: ${({ checked, theme }) =>
     checked ? `1px solid ${theme.color['text_500']}` : 'none'};
+  cursor: pointer;
 `;
 
 const ButtonText = styled.span`
