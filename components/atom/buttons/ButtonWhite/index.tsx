@@ -9,15 +9,9 @@ export interface Props {
 }
 
 const ButtonWhite = ({ onClick, children, size = 'md' }: Props) => {
-  const [active, setActive] = useState(false);
   return (
-    <Button
-      onClick={onClick}
-      size={size}
-      onMouseOver={() => setActive(true)}
-      onMouseOut={() => setActive(false)}
-    >
-      <ButtonText active={active}>{children}</ButtonText>
+    <Button onClick={onClick} size={size}>
+      <ButtonText>{children}</ButtonText>
     </Button>
   );
 };
@@ -35,21 +29,21 @@ const Button = styled.button<{ size: SizePrimary }>`
   height: 40px;
   transition: 200ms;
   width: ${({ theme, size }) => theme.sizePrimary[size]};
+  color: ${({ theme }) => theme.color['red_500']};
   &:hover {
     border: 1px solid ${({ theme }) => theme.color['red_100']};
+    color: ${({ theme }) => theme.color['red_100']};
   }
   &:active {
     transform: scale(0.95);
   }
 `;
 
-const ButtonText = styled.span<{ active: boolean }>`
+const ButtonText = styled.span`
   font-family: Gmarket Sans TTF;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
   letter-spacing: -0.154px;
-  color: ${({ theme, active }) =>
-    active ? theme.color['red_100'] : theme.color['red_500']};
 `;
