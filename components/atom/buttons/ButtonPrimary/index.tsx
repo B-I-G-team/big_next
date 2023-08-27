@@ -10,7 +10,7 @@ export interface Props {
 
 const ButtonPrimary = ({ onClick, children, size = 'md' }: Props) => (
   <Button onClick={onClick} size={size}>
-    <ButtonText color={'white'}>{children}</ButtonText>
+    <ButtonText>{children}</ButtonText>
   </Button>
 );
 

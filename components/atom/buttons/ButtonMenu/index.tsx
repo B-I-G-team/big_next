@@ -1,6 +1,5 @@
 import { styled } from 'styled-components';
 import MenuIcon from '@/components/icons/MenuIcon';
-import Menu from 'Menu.svg';
 export interface Props {
   onClick: () => void;
 }

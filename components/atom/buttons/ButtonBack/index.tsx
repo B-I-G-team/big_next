@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import Image from 'next/image';
 import BackIcon from '@/components/icons/BackIcon';
 export interface Props {
   onClick: () => void;
