@@ -46,7 +46,7 @@ const Button = styled.button<{ size: SizeGhost }>`
 
 const ButtonText = styled.span`
   font-family: 'Gmarket Sans TTF';
-  color: black;
+  color: ${({ theme }) => theme.color.text_500};
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
