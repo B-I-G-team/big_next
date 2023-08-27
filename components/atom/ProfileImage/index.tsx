@@ -26,10 +26,14 @@ const sizeAdjust = (size: ImageSize) => {
 };
 
 /**
- * 프로필 이미지 컴포넌트
+ *
  * 작성자: 김대환
- * size 가 sm 일 경우에만 버튼의 역할을 한다.
+ *
+ * size 가 sm 일 경우에만 버튼의 역할을 합니다.
+ *
  * 나머지 사이즈일 경우는 그냥 static 한 이미지입니다.
+ *
+ * 이미지 파일을 임포트한후 src 속성값으로 주면 됩니다.
  */
 const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
   return (
