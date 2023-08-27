@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import { ReactElement } from 'react';
 import { Props } from './';
 import ButtonGhost from './';
 

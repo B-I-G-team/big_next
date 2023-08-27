@@ -1,14 +1,14 @@
 import { Story } from '@storybook/react';
 import { Props } from './';
-import ButtonPrimary from './';
+import ButtonWhite from './';
 
 export default {
-  title: 'Atom/Buttons/ButtonPrimary',
-  component: ButtonPrimary,
+  title: 'Atom/Buttons/ButtonWhite',
+  component: ButtonWhite,
   tags: ['autodocs'],
 };
 
-const Template: Story<Props> = (args: Props) => <ButtonPrimary {...args} />;
+const Template: Story<Props> = (args: Props) => <ButtonWhite {...args} />;
 
 export const Default = Template.bind({});
 
