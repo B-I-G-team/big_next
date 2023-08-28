@@ -1,14 +1,14 @@
 import { Story } from '@storybook/react';
 import { Props } from './';
-import ButtonPayCard from './';
+import PaymentRadio from './';
 
 export default {
-  title: 'Atom/Buttons/ButtonPayCard',
-  component: ButtonPayCard,
+  title: 'Atom/RadioButton/PaymentRadio',
+  component: PaymentRadio,
   tags: ['autodocs'],
 };
 
-const Template: Story<Props> = (args: Props) => <ButtonPayCard {...args} />;
+const Template: Story<Props> = (args: Props) => <PaymentRadio {...args} />;
 
 export const Default = Template.bind({});
 
