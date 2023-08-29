@@ -7,6 +7,10 @@ import styled from 'styled-components';
 
 export type RadioPaymentValue = 'card' | 'kakao' | '';
 
+/**
+ *
+ * radioPaymentAtom 에 radio 에서 선택한 value 값이 들어 있습니다.
+ */
 const RadioPayment = () => {
   const [value, setValue] = useAtom(radioPaymentAtom);
 

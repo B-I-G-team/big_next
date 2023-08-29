@@ -21,7 +21,7 @@ const HiddenCheckbox = styled.input`
   display: none;
 `;
 
-const Button = styled.label<{ active?: boolean }>`
+const Button = styled.div<{ active?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
