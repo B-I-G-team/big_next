@@ -1,35 +1,24 @@
 import { styled } from 'styled-components';
 import { ReactChild, useState } from 'react';
 import CardIcon from '@/components/icons/CardIcon';
+
 export interface Props {
+  active?: boolean;
   onClick: () => void;
 }
 
-const ButtonPayCard = ({}: Props) => {
-  const [checked, setChecked] = useState(true);
+const PayCardButton = ({ active, onClick }: Props) => {
   return (
-    <>
-      <HiddenCheckbox
-        checked={checked}
-        onChange={() => setChecked((prev) => !prev)}
-        id={'text'}
-        type="checkbox"
-      ></HiddenCheckbox>
-      <Button checked={checked} htmlFor="text">
-        <CardIcon />
-        <ButtonText>일반카드</ButtonText>
-      </Button>
-    </>
+    <Button active={active} onClick={onClick}>
+      <CardIcon />
+      <ButtonText>일반카드</ButtonText>
+    </Button>
   );
 };
 
-export default ButtonPayCard;
+export default PayCardButton;
 
-const HiddenCheckbox = styled.input`
-  display: none;
-`;
-
-const Button = styled.label<{ checked: boolean }>`
+const Button = styled.div<{ active?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,8 +26,8 @@ const Button = styled.label<{ checked: boolean }>`
   border-radius: 8px;
   gap: 4px;
   background-color: ${({ theme }) => theme.color['white']};
-  border: ${({ checked, theme }) =>
-    checked
+  border: ${({ active, theme }) =>
+    active
       ? `1px solid ${theme.color['text_500']}`
       : `1px solid ${theme.color['border_100']}`};
   cursor: pointer;
@@ -53,5 +42,3 @@ const ButtonText = styled.span`
   line-height: 16px; /* 133.333% */
   letter-spacing: 0.24px;
 `;
-
-const ButtonImg = styled.img``;

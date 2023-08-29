@@ -2,34 +2,26 @@ import { styled } from 'styled-components';
 import { ReactChild, useState } from 'react';
 import KakaoIcon from '@/components/icons/KakaoIcon';
 export interface Props {
+  active?: boolean;
   onClick: () => void;
 }
 
-const ButtonPayKakao = ({}: Props) => {
-  const [checked, setChecked] = useState(true);
+const PayKakaoButton = ({ active, onClick }: Props) => {
   return (
-    <>
-      <HiddenCheckbox
-        checked={checked}
-        onChange={() => setChecked((prev) => !prev)}
-        id={'text'}
-        type="checkbox"
-      ></HiddenCheckbox>
-      <Button checked={checked} htmlFor="text">
-        <KakaoIcon />
-        <ButtonText>카카오페이</ButtonText>
-      </Button>
-    </>
+    <Button active={active} onClick={onClick}>
+      <KakaoIcon />
+      <ButtonText>카카오페이</ButtonText>
+    </Button>
   );
 };
 
-export default ButtonPayKakao;
+export default PayKakaoButton;
 
 const HiddenCheckbox = styled.input`
   display: none;
 `;
 
-const Button = styled.label<{ checked: boolean }>`
+const Button = styled.label<{ active?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,8 +30,8 @@ const Button = styled.label<{ checked: boolean }>`
   padding: 0px;
   gap: 4px;
   background-color: ${({ theme }) => theme.color['kakao']};
-  border: ${({ checked, theme }) =>
-    checked ? `1px solid ${theme.color['text_500']}` : 'none'};
+  border: ${({ active, theme }) =>
+    active ? `1px solid ${theme.color['text_500']}` : 'none'};
   cursor: pointer;
 `;
 
@@ -52,5 +44,3 @@ const ButtonText = styled.span`
   line-height: 16px; /* 133.333% */
   letter-spacing: 0.24px;
 `;
-
-const ButtonImg = styled.img``;

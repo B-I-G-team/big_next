@@ -1,9 +1,9 @@
 import { Story } from '@storybook/react';
-import { Props } from './';
-import ButtonPayCard from './';
+import { Props } from '.';
+import ButtonPayCard from '.';
 
 export default {
-  title: 'Atom/Buttons/ButtonPayCard',
+  title: 'Atom/Radio-Buttons/ButtonPayCard',
   component: ButtonPayCard,
   tags: ['autodocs'],
 };
