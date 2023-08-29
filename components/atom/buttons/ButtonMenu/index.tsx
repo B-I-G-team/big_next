@@ -25,5 +25,3 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.color['gray_hover']};
   }
 `;
-
-const ButtonImg = styled.img``;

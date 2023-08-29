@@ -1,14 +1,22 @@
-import { SizeGhost } from '@/styles/theme';
 import { styled } from 'styled-components';
 import { ReactChild } from 'react';
 
 export interface Props {
   children: ReactChild;
-  size?: SizeGhost;
+  size?: SizeButton;
   disabled?: boolean;
   onClick: () => void;
 }
+type SizeButton = 'default' | 'fit';
 
+const sizeAdjust = (size: SizeButton) => {
+  switch (size) {
+    case 'default':
+      return '100px';
+    case 'fit':
+      return '100%';
+  }
+};
 const ButtonGhost = ({
   onClick,
   children,
@@ -22,7 +30,7 @@ const ButtonGhost = ({
 
 export default ButtonGhost;
 
-const Button = styled.button<{ size: SizeGhost }>`
+const Button = styled.button<{ size: SizeButton }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +39,7 @@ const Button = styled.button<{ size: SizeGhost }>`
   border: 1px solid ${({ theme }) => theme.color['border_300']};
   background-color: ${({ theme }) => theme.color['white']};
   height: 24px;
-  width: ${({ theme, size }) => theme.sizeGhost[size]};
+  width: ${({ size }) => sizeAdjust(size)};
   transition: 200ms;
   cursor: pointer;
   &:active:not(:disabled) {
@@ -40,6 +48,7 @@ const Button = styled.button<{ size: SizeGhost }>`
   }
 
   &:disabled {
+    cursor: not-allowed;
     background-color: ${({ theme }) => theme.color['gray_disabled']};
   }
 `;
