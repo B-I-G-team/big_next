@@ -6,13 +6,13 @@ export interface Props {
   onClick: () => void;
 }
 
-const ButtonProfile = ({ onClick, children }: Props) => (
+const GrayButton = ({ onClick, children }: Props) => (
   <Button onClick={onClick}>
     <ButtonText>{children}</ButtonText>
   </Button>
 );
 
-export default ButtonProfile;
+export default GrayButton;
 
 const Button = styled.button`
   cursor: pointer;

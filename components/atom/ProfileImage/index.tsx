@@ -8,7 +8,7 @@ export interface Props {
   src: string | StaticImageData;
   size: ImageSize;
   onClick?: () => {};
-  active: boolean;
+  active?: boolean;
 }
 
 const sizeAdjust = (size: ImageSize) => {
