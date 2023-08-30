@@ -6,7 +6,7 @@ export interface Props {
   onClick: () => void;
 }
 
-const ButtonLogin = ({ onClick, children }: Props) => {
+const TextButton = ({ onClick, children }: Props) => {
   return (
     <Button onClick={onClick}>
       <ButtonText>{children}</ButtonText>
@@ -14,7 +14,7 @@ const ButtonLogin = ({ onClick, children }: Props) => {
   );
 };
 
-export default ButtonLogin;
+export default TextButton;
 
 const Button = styled.button`
   cursor: pointer;
