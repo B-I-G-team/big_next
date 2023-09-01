@@ -13,7 +13,7 @@ export interface Props {
  *
  * 사용예시
  *
- * ```javascript
+ * ```jsx
  * import DocumentIcon from '@/components/icons/DocumentIcon';
  * ...
  * <IconAndText IconComponent={DocumentIcon} text='예약내역' />
