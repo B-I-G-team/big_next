@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import StyledJsxRegistry from './registry';
 import { Providers } from './providers';
+import StyledComponentsRegistry from '@/lib/registry';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledJsxRegistry>
+        <StyledComponentsRegistry>
           <Providers>{children}</Providers>
-        </StyledJsxRegistry>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
