@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
   
   body {
   	background: #fff;
+
+    max-width: 600px;
   }
 `;
 
