@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
   	background: #fff;
 
     max-width: 600px;
+    margin: auto;
+    min-height: 100vh;
+
+    border: 1px solid ${({ theme }) => theme.color.border_100};
   }
 `;
 
