@@ -1,9 +1,9 @@
 import { Story } from '@storybook/react';
-import { Props } from './';
-import ButtonPayKakao from './';
+import { Props } from '.';
+import ButtonPayKakao from '.';
 
 export default {
-  title: 'Atom/Buttons/ButtonPayKakao',
+  title: 'Atom/Radio-Buttons/ButtonPayKakao',
   component: ButtonPayKakao,
   tags: ['autodocs'],
 };
