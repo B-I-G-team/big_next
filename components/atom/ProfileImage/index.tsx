@@ -49,7 +49,7 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
       src={src}
       alt="profile image"
       size={size}
-      active={active}
+      $active={active}
       onClick={onClick}
     />
   );
@@ -57,14 +57,14 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
 
 export default ProfileImage;
 
-const StyledImage = styled(Image)<{ size: ImageSize; active: boolean }>`
+const StyledImage = styled(Image)<{ size: ImageSize; $active: boolean }>`
   width: ${({ size }) => sizeAdjust(size)};
   height: ${({ size }) => sizeAdjust(size)};
 
   border-radius: 50%;
 
   border: 1px solid
-    ${({ active, theme }) => (active ? theme.color.blue : 'none')};
+    ${({ $active, theme }) => ($active ? theme.color.blue : 'none')};
 
   cursor: ${({ size }) => (size === 'sm' ? 'pointer' : 'default')};
 `;
