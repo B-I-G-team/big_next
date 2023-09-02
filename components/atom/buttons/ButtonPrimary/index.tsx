@@ -54,5 +54,5 @@ const ButtonText = styled.span`
   font-weight: 500;
   line-height: 20px;
   letter-spacing: -0.15px;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
 `;
