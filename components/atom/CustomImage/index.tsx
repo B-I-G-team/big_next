@@ -21,7 +21,7 @@ export interface Props {
   size: Size;
 }
 
-const CustomImage = ({ size, src, alt = '사진' }: Props) => {
+const CustomImage = ({ size = 'md', src, alt = '사진' }: Props) => {
   return <StyledImage size={size} src={src} alt={alt} />;
 };
 
