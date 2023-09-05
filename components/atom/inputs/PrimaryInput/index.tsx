@@ -4,12 +4,14 @@ import SearchIcon from '@/components/icons/SearchIcon';
 export interface Props {
   prefixed?: boolean;
   placeholder: string;
+  value: string;
+  onChange: () => void;
 }
 
 const PrimaryInput = ({ prefixed, placeholder }: Props) => {
   return (
     <Container>
-      <SearchIcon prefixed={prefixed} />
+      {prefixed && <SearchIcon />}
       <Input placeholder={placeholder} />
     </Container>
   );
@@ -26,7 +28,7 @@ const Container = styled.div`
 `;
 const Input = styled.input`
   display: flex;
-  margin-left: 10px;
+  margin: 0px 10px;
   width: 100%;
   align-items: flex-start;
   border: none;

@@ -1,13 +1,9 @@
 import React from 'react';
 import { styled } from 'styled-components';
 
-interface Props {
-  prefixed?: boolean;
-}
-const SearchIcon = ({ prefixed }: Props) => {
+const SearchIcon = () => {
   return (
     <Icon
-      prefixed={prefixed}
       width="20"
       height="20"
       viewBox="0 0 20 20"
@@ -25,8 +21,8 @@ const SearchIcon = ({ prefixed }: Props) => {
 };
 export default SearchIcon;
 
-const Icon = styled.svg<{ prefixed?: boolean }>`
+const Icon = styled.svg`
   margin-left: 6px;
-  margin-bottom: 4px;
-  display: ${({ prefixed }) => (prefixed ? 'inline' : 'none')};
+  margin-bottom: 2px;
+  display: inline;
 `;
