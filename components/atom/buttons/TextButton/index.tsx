@@ -1,24 +1,27 @@
 import { styled } from 'styled-components';
 import { ReactChild } from 'react';
 
+type Color = 'blue' | 'text_500';
+
 export interface Props {
   children: ReactChild;
   onClick: () => void;
+  color: Color;
 }
 
-const ButtonLogin = ({ onClick, children }: Props) => {
+const TextButton = ({ onClick, children, color = 'text_500' }: Props) => {
   return (
     <Button onClick={onClick}>
-      <ButtonText>{children}</ButtonText>
+      <ButtonText color={color}>{children}</ButtonText>
     </Button>
   );
 };
 
-export default ButtonLogin;
+export default TextButton;
 
 const Button = styled.button`
   cursor: pointer;
-  display: flex;
+  display: inline;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
@@ -27,18 +30,17 @@ const Button = styled.button`
   background-color: ${({ theme }) => theme.color['white']};
   height: 24px;
   transition: 200ms;
-  width: 43px;
 `;
 
-const ButtonText = styled.span`
+const ButtonText = styled.span<{ color: Color }>`
   /* Android/Small_Bold */
   font-family: Gmarket Sans TTF;
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
   line-height: 16px; /* 133.333% */
-  color: ${({ theme }) => theme.color['text_500']};
+  color: ${({ theme, color }) => theme.color[color]};
   &:hover {
-    color: ${({ theme }) => theme.color['text_300']};
+    color: ${({ theme, color }) => theme.color[`${color}_hover`]};
   }
 `;
