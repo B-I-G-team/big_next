@@ -8,11 +8,11 @@ export interface Props {
   onChange: () => void;
 }
 
-const PrimaryInput = ({ prefixed, placeholder }: Props) => {
+const PrimaryInput = ({ prefixed, placeholder, onChange, value }: Props) => {
   return (
     <Container>
       {prefixed && <SearchIcon />}
-      <Input placeholder={placeholder} />
+      <Input onChange={onChange} value={value} placeholder={placeholder} />
     </Container>
   );
 };
