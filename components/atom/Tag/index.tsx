@@ -22,6 +22,7 @@ export default Tag;
 
 const TagBox = styled.div<{ backgroundColor: Color; color: Color }>`
   display: inline-flex;
+  margin-right: auto;
   padding: 4px;
   justify-content: center;
   align-items: center;
