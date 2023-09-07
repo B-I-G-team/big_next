@@ -6,14 +6,17 @@ import { styled } from 'styled-components';
 
 export interface Props {
   date: string;
-  onClick: () => {};
+  reserveKey: number;
 }
-const ReserveCardHeader = ({ date, onClick }: Props) => {
+const ReserveCardHeader = ({ date, reserveKey }: Props) => {
+  const onClickButton = () => {
+    console.log(`${reserveKey} 상세보기`);
+  };
   return (
     <Container>
       <SubTitle>{date}</SubTitle>
-      <TextButton onClick={onClick} color={'blue'}>
-        상세보기 ＞
+      <TextButton onClick={onClickButton} color="blue">
+        {'상세보기 >'}
       </TextButton>
     </Container>
   );
@@ -23,6 +26,8 @@ export default ReserveCardHeader;
 
 const Container = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
+  padding: 15px;
   justify-content: space-between;
 `;
