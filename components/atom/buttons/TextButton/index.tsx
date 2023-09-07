@@ -1,7 +1,6 @@
 import { styled } from 'styled-components';
 import { ReactChild } from 'react';
-
-type Color = 'blue' | 'text_500';
+import { Color } from '@/styles/theme';
 
 export interface Props {
   children: ReactChild;
@@ -41,6 +40,6 @@ const ButtonText = styled.span<{ color: Color }>`
   line-height: 16px; /* 133.333% */
   color: ${({ theme, color }) => theme.color[color]};
   &:hover {
-    color: ${({ theme, color }) => theme.color[`${color}_hover`]};
+    opacity: 0.8;
   }
 `;
