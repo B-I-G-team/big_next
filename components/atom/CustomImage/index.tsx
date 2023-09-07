@@ -22,7 +22,7 @@ export interface Props {
 }
 
 const CustomImage = ({ size = 'md', src, alt = '사진' }: Props) => {
-  return <StyledImage size={size} src={src} alt={alt} />;
+  return <StyledImage width="0" height="0" size={size} src={src} alt={alt} />;
 };
 
 export default CustomImage;
