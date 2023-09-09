@@ -89,10 +89,10 @@ export default ReserveInfo;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 320px;
-  height: 570px;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const ReserveCardBox = styled.div`

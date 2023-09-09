@@ -47,7 +47,7 @@ const Container = styled.div`
   border: 1px solid ${({ theme }) => theme.color.border_100};
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 10px;
-  width: 300px;
+  width: 100%;
 `;
 
 const Divider = styled.div`
