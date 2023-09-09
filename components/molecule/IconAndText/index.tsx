@@ -39,4 +39,9 @@ const Container = styled.div`
   gap: 15px;
   padding: 20px 12px;
   border-bottom: 1px solid ${({ theme }) => theme.color.border_100};
+  transition: 200ms;
+
+  &:hover {
+    opacity: 0.55;
+  }
 `;
