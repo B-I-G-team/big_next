@@ -4,10 +4,19 @@ const GlobalStyle = createGlobalStyle`
   *{
     font-family: 'Gmarket Sans TTF';
     box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
   }
   
   body {
   	background: #fff;
+
+    max-width: 600px;
+    margin: auto;
+    min-height: 100vh;
+
+    border: 1px solid ${({ theme }) => theme.color.border_100};
   }
 `;
 

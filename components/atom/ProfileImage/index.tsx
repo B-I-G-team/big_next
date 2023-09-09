@@ -8,7 +8,7 @@ export interface Props {
   src: string | StaticImageData;
   size: ImageSize;
   onClick?: () => {};
-  active: boolean;
+  active?: boolean;
 }
 
 const sizeAdjust = (size: ImageSize) => {
@@ -34,6 +34,14 @@ const sizeAdjust = (size: ImageSize) => {
  * 나머지 사이즈일 경우는 그냥 static 한 이미지입니다.
  *
  * 이미지 파일을 임포트한후 src 속성값으로 주면 됩니다.
+ *
+ * ```jsx
+ * import TempProfileImage from '@/public/assets/ProfileTemp.jpeg';
+ *
+ * ...
+ *<ProfileImage onClick={() => {}} size="md" src={TempProfileImage} />
+ *
+ * ```
  */
 const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
   return (
@@ -41,7 +49,7 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
       src={src}
       alt="profile image"
       size={size}
-      active={active}
+      $active={active}
       onClick={onClick}
     />
   );
@@ -49,14 +57,14 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
 
 export default ProfileImage;
 
-const StyledImage = styled(Image)<{ size: ImageSize; active: boolean }>`
+const StyledImage = styled(Image)<{ size: ImageSize; $active: boolean }>`
   width: ${({ size }) => sizeAdjust(size)};
   height: ${({ size }) => sizeAdjust(size)};
 
   border-radius: 50%;
 
   border: 1px solid
-    ${({ active, theme }) => (active ? theme.color.blue : 'none')};
+    ${({ $active, theme }) => ($active ? theme.color.blue : 'none')};
 
   cursor: ${({ size }) => (size === 'sm' ? 'pointer' : 'default')};
 `;

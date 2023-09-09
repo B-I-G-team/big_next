@@ -4,13 +4,13 @@ export interface Props {
   onClick: () => void;
 }
 
-const ButtonMenu = ({ onClick }: Props) => (
+const MenuButton = ({ onClick }: Props) => (
   <Button onClick={onClick}>
     <MenuIcon />
   </Button>
 );
 
-export default ButtonMenu;
+export default MenuButton;
 
 const Button = styled.button`
   cursor: pointer;
