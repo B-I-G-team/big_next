@@ -8,7 +8,7 @@ import { styled } from 'styled-components';
 
 export interface Props {
   reserveKey: number;
-  isUsed: boolean;
+  is_used: boolean;
   gym: {
     name: string;
     location: string;
@@ -21,7 +21,7 @@ export interface Props {
 
 const ReserveCardMain = ({
   reserveKey,
-  isUsed,
+  is_used,
   gym,
   date,
   startTime,
@@ -38,9 +38,9 @@ const ReserveCardMain = ({
   return (
     <Container>
       <CustomImage size="sm" src={gym.img} alt={gym.name} />
-      <ReserveInfo isUsed={isUsed}>
-        {isUsed && (
-          <Tag color="white" backgroundColor="text_100">
+      <ReserveInfo is_used={is_used}>
+        {is_used && (
+          <Tag color="white" background_color="text_100">
             이용완료
           </Tag>
         )}
@@ -48,13 +48,13 @@ const ReserveCardMain = ({
         <Small>{gym.location}</Small>
         <Small color="text_300">{`${date} | ${usingTime}시간`}</Small>
         <Small color="text_300">{`체크인 ${startTime.toLocaleString()}:00 | 체크아웃 ${endTime.toLocaleString()}:00`}</Small>
-        {isUsed || (
+        {is_used || (
           <CancelInfo>
             <Small color="green">무료취소</Small>
             <Small color="text_300">{`${date} 00:00전까지`}</Small>
           </CancelInfo>
         )}
-        {isUsed ? (
+        {is_used ? (
           <Buttons>
             <ButtonGhost size="fit" disabled onClick={onClickInfo}>
               이용 정보
@@ -79,11 +79,11 @@ const Container = styled.div`
   padding: 10px;
 `;
 
-const ReserveInfo = styled.div<{ isUsed: boolean }>`
+const ReserveInfo = styled.div<{ is_used: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 6px;
-  opacity: ${({ isUsed }) => (isUsed ? 0.5 : 1)};
+  opacity: ${({ is_used }) => (is_used ? 0.5 : 1)};
 `;
 
 const CancelInfo = styled.div`
@@ -97,5 +97,3 @@ const Buttons = styled.div`
   display: flex;
   gap: 10px;
 `;
-
-const InfoButton = styled(ButtonGhost)``;

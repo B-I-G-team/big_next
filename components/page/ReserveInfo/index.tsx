@@ -9,7 +9,7 @@ import { StaticImageData } from 'next/image';
 export interface Props {
   reserveInfo: {
     reserveKey: number;
-    isUsed: boolean;
+    is_used: boolean;
     gym: {
       name: string;
       location: string;
@@ -25,7 +25,7 @@ const ReserveInfo = () => {
   const reserveInfo = [
     {
       reserveKey: 1,
-      isUsed: false,
+      is_used: false,
       gym: {
         name: '낙산관 실내체육관(낙산관)',
         location: '서울특별시 성북구 삼선교로 16길 116',
@@ -37,7 +37,7 @@ const ReserveInfo = () => {
     },
     {
       reserveKey: 2,
-      isUsed: false,
+      is_used: false,
       gym: {
         name: '낙산관 실내체육관(낙산관)',
         location: '서울특별시 성북구 삼선교로 16길 116',
@@ -49,7 +49,7 @@ const ReserveInfo = () => {
     },
     {
       reserveKey: 3,
-      isUsed: true,
+      is_used: true,
       gym: {
         name: '낙산관 실내체육관(낙산관)',
         location: '서울특별시 성북구 삼선교로 16길 116',
@@ -61,7 +61,7 @@ const ReserveInfo = () => {
     },
     {
       reserveKey: 4,
-      isUsed: true,
+      is_used: true,
       gym: {
         name: '낙산관 실내체육관(낙산관)',
         location: '서울특별시 성북구 삼선교로 16길 116',

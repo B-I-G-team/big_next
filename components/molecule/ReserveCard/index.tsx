@@ -6,7 +6,7 @@ import { StaticImageData } from 'next/image';
 export interface Props {
   reserveInfo: {
     reserveKey: number;
-    isUsed: boolean;
+    is_used: boolean;
     gym: {
       name: string;
       location: string;
@@ -29,7 +29,7 @@ const ReserveCard = ({ reserveInfo }: Props) => {
         reserveKey={reserveInfo.reserveKey}
         date={reserveInfo.date}
         gym={reserveInfo.gym}
-        isUsed={reserveInfo.isUsed}
+        is_used={reserveInfo.is_used}
         startTime={reserveInfo.startTime}
         endTime={reserveInfo.endTime}
       />

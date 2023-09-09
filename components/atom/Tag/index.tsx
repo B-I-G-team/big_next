@@ -3,16 +3,16 @@ import { Color } from '@/styles/theme';
 import { styled } from 'styled-components';
 export interface Props {
   color: Color;
-  backgroundColor: Color;
+  background_color: Color;
   children: ReactChild;
 }
 const Tag = ({
   color = 'white',
-  backgroundColor = 'border_300',
+  background_color = 'border_300',
   children,
 }: Props) => {
   return (
-    <TagBox backgroundColor={backgroundColor} color={color}>
+    <TagBox background_color={background_color} color={color}>
       {children}
     </TagBox>
   );
@@ -20,7 +20,7 @@ const Tag = ({
 
 export default Tag;
 
-const TagBox = styled.div<{ backgroundColor: Color; color: Color }>`
+const TagBox = styled.div<{ background_color: Color; color: Color }>`
   display: inline-flex;
   margin-right: auto;
   padding: 4px;
@@ -33,7 +33,7 @@ const TagBox = styled.div<{ backgroundColor: Color; color: Color }>`
   font-weight: 700;
   line-height: 16px; /* 133.333% */
   letter-spacing: 0.24px;
-  background-color: ${({ backgroundColor, theme }) =>
-    theme.color[backgroundColor]};
+  background-color: ${({ background_color, theme }) =>
+    theme.color[background_color]};
   color: ${({ color, theme }) => theme.color[color]};
 `;
