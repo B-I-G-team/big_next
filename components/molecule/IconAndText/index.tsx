@@ -1,5 +1,5 @@
 import Body3 from '@/components/atom/typography/Body3';
-import React, { ReactComponentElement, ReactElement, ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export interface Props {

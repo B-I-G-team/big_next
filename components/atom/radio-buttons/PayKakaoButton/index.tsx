@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { ReactChild, useState } from 'react';
 import KakaoIcon from '@/components/icons/KakaoIcon';
 export interface Props {
   active?: boolean;

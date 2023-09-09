@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { ReactChild, useState } from 'react';
+import { ReactChild } from 'react';
 
 export interface Props {
   children: ReactChild;
