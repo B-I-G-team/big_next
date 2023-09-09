@@ -62,8 +62,12 @@ const ReserveCardMain = ({
           </Buttons>
         ) : (
           <Buttons>
-            <ButtonGhost onClick={onClickCancel}>취소 요청</ButtonGhost>
-            <ButtonGhost onClick={onClickInfo}>이용 정보</ButtonGhost>
+            <ButtonGhost size="fit" onClick={onClickCancel}>
+              취소 요청
+            </ButtonGhost>
+            <ButtonGhost size="fit" onClick={onClickInfo}>
+              이용 정보
+            </ButtonGhost>
           </Buttons>
         )}
       </ReserveInfo>

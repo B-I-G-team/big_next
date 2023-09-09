@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   body {
   	background: #fff;
 
-    max-width: 360px;
+    max-width: 600px;
     margin: auto;
     min-height: 100vh;
 

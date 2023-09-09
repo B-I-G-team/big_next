@@ -12,7 +12,7 @@ const Template: Story<any> = (args: any) => <ReserveCardMain {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  isUsed: true,
+  is_used: true,
   gym: {
     name: '낙산관 실내체육관(낙산관)',
     location: '서울특별시 성북구 삼선교로 16길 116',
