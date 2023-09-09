@@ -24,7 +24,9 @@ export default NavHeader;
 
 const Container = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
+  border-bottom: 1px solid ${({ theme }) => theme.color.border_300};
   padding: 5px;
   justify-content: flex-start;
   gap: 20px;

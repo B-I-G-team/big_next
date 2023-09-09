@@ -2,37 +2,36 @@ import React from 'react';
 import { styled } from 'styled-components';
 import ReserveCardHeader from '../ReserveCardHeader';
 import ReserveCardMain from '../ReserveCardMain';
+import { StaticImageData } from 'next/image';
 export interface Props {
-  reserveKey: number;
-  isUsed: boolean;
-  gym: {
-    name: string;
-    location: string;
-    img: string;
+  reserveInfo: {
+    reserveKey: number;
+    isUsed: boolean;
+    gym: {
+      name: string;
+      location: string;
+      img: StaticImageData;
+    };
+    date: string;
+    startTime: number;
+    endTime: number;
   };
-  date: string;
-  startTime: number;
-  endTime: number;
 }
-const ReserveCard = ({
-  reserveKey,
-  isUsed,
-  gym,
-  date,
-  startTime,
-  endTime,
-}: Props) => {
+const ReserveCard = ({ reserveInfo }: Props) => {
   return (
     <Container>
-      <ReserveCardHeader reserveKey={reserveKey} date={date} />
+      <ReserveCardHeader
+        reserveKey={reserveInfo.reserveKey}
+        date={reserveInfo.date}
+      />
       <Divider />
       <ReserveCardMain
-        reserveKey={reserveKey}
-        date={date}
-        gym={gym}
-        isUsed={isUsed}
-        startTime={startTime}
-        endTime={endTime}
+        reserveKey={reserveInfo.reserveKey}
+        date={reserveInfo.date}
+        gym={reserveInfo.gym}
+        isUsed={reserveInfo.isUsed}
+        startTime={reserveInfo.startTime}
+        endTime={reserveInfo.endTime}
       />
     </Container>
   );
@@ -46,6 +45,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid ${({ theme }) => theme.color.border_100};
+  background-color: ${({ theme }) => theme.color.white};
   border-radius: 10px;
   width: 300px;
 `;

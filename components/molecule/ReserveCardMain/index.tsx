@@ -2,6 +2,7 @@ import CustomImage from '@/components/atom/CustomImage';
 import Tag from '@/components/atom/Tag';
 import ButtonGhost from '@/components/atom/buttons/ButtonGhost';
 import Small from '@/components/atom/typography/Small';
+import { StaticImageData } from 'next/image';
 import React from 'react';
 import { styled } from 'styled-components';
 
@@ -11,7 +12,7 @@ export interface Props {
   gym: {
     name: string;
     location: string;
-    img: string;
+    img: StaticImageData;
   };
   date: string;
   startTime: number;
