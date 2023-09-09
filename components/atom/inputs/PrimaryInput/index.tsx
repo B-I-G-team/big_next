@@ -5,7 +5,7 @@ export interface Props {
   prefixed?: boolean;
   placeholder: string;
   value: string;
-  onChange: () => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 const PrimaryInput = ({ prefixed, placeholder, onChange, value }: Props) => {
@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
   border: 1px solid ${({ theme }) => theme.color['border_300']};
   align-items: center;
-  width: 300px;
+  width: 100%;
   height: 33px;
   border-radius: 6px;
 `;
