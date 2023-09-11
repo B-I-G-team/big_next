@@ -1,5 +1,5 @@
 import { Color } from '@/styles/theme';
-import { ReactChild, ReactElement } from 'react';
+import { ReactChild } from 'react';
 import styled from 'styled-components';
 
 export interface Props {

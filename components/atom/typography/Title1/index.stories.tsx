@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import { ReactElement } from 'react';
 import Title1, { Props } from './';
 
 export default {

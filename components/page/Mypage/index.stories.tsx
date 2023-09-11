@@ -1,7 +1,5 @@
 import { Story } from '@storybook/react';
-import { ReactElement } from 'react';
 import Mypage, { Props } from './';
-import TempMypage from '@/public/assets/ProfileTemp.jpeg';
 
 export default {
   title: 'Page/Mypage',
