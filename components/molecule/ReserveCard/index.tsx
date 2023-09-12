@@ -24,7 +24,6 @@ const ReserveCard = ({ reserveInfo }: Props) => {
         reserveKey={reserveInfo.reserveKey}
         date={reserveInfo.date}
       />
-      <Divider />
       <ReserveCardMain
         reserveKey={reserveInfo.reserveKey}
         date={reserveInfo.date}
@@ -48,10 +47,4 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 10px;
   width: 100%;
-`;
-
-const Divider = styled.div`
-  width: 100%;
-  border: 1px solid ${({ theme }) => theme.color.border_100};
-  margin-bottom: 10px;
 `;

@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import NavHeader from '.';
+import NavHeader, { Props } from '.';
 
 export default {
   title: 'Molecule/NavHeader',
@@ -7,8 +7,11 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template: Story<any> = (args: any) => <NavHeader {...args} />;
+const Template: Story<Props> = (args: Props) => <NavHeader {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  pageName: '프로필 수정',
+  isSaveButton: true,
+};

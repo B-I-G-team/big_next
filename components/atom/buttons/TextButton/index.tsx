@@ -28,7 +28,6 @@ const Button = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.color['white']};
   height: 24px;
-  transition: 200ms;
 `;
 
 const ButtonText = styled.span<{ color: Color }>`
@@ -38,6 +37,7 @@ const ButtonText = styled.span<{ color: Color }>`
   font-style: normal;
   font-weight: 700;
   line-height: 16px; /* 133.333% */
+  transition: 200ms;
   color: ${({ theme, color }) => theme.color[color]};
   &:hover {
     opacity: 0.8;

@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import ReserveCard from '.';
+import ReserveCard, { Props } from '.';
 import GymTemp from '@/public/assets/GymTemp.png';
 export default {
   title: 'Molecule/ReserveCard',
@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template: Story<any> = (args: any) => <ReserveCard {...args} />;
+const Template: Story<Props> = (args: Props) => <ReserveCard {...args} />;
 
 export const Default = Template.bind({});
 

@@ -1,4 +1,4 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { StaticImageData } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import React from 'react';
 import { styled } from 'styled-components';
@@ -16,13 +16,13 @@ const sizeAdjust = (size: Size) => {
   }
 };
 export interface Props {
-  src: StaticImport | string;
+  src: StaticImageData | string;
   alt: string;
   size: Size;
 }
 
 const CustomImage = ({ size = 'md', src, alt = '사진' }: Props) => {
-  return <StyledImage width="0" height="0" size={size} src={src} alt={alt} />;
+  return <StyledImage size={size} src={src} alt={alt} />;
 };
 
 export default CustomImage;

@@ -12,4 +12,7 @@ const Template: Story<Props> = (args: Props) => <PrimaryInput {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  placeholder: '체육관, 업체 검색',
+  prefixed: true,
+};

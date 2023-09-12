@@ -30,4 +30,5 @@ const Container = styled.div`
   width: 100%;
   padding: 15px;
   justify-content: space-between;
+  border-bottom: 1px solid ${({ theme }) => theme.color.border_100};
 `;

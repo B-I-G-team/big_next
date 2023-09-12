@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
 };
 
-const Template: Story<any> = (args: Props) => <ReserveCardHeader {...args} />;
+const Template: Story<Props> = (args: Props) => <ReserveCardHeader {...args} />;
 
 export const Default = Template.bind({});
 
