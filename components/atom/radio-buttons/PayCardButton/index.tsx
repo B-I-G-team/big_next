@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { ReactChild, useState } from 'react';
 import CardIcon from '@/components/icons/CardIcon';
 
 export interface Props {

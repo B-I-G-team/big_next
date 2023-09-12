@@ -2,7 +2,7 @@ import PayCardButton from '@/components/atom/radio-buttons/PayCardButton';
 import PayKakaoButton from '@/components/atom/radio-buttons/PayKakaoButton';
 import { radioPaymentAtom } from '@/jotai/common';
 import { useAtom } from 'jotai';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 export type RadioPaymentValue = 'card' | 'kakao' | '';

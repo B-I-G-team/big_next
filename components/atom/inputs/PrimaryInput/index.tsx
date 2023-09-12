@@ -5,7 +5,7 @@ export interface Props {
   prefixed?: boolean;
   placeholder: string;
   value: string;
-  onChange: () => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 const PrimaryInput = ({ prefixed, placeholder, onChange, value }: Props) => {
