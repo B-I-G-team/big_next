@@ -28,7 +28,7 @@ const NavHeader = ({
       </LeftSection>
       {isSaveButton && (
         <SaveButton onClick={onClickSave} color="text_500">
-          <Body3>저장</Body3>
+          <Body3>저장완료</Body3>
         </SaveButton>
       )}
     </Container>
