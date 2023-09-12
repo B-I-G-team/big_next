@@ -20,6 +20,5 @@ export default TypoGraphy;
 const Text = styled.span<{ $bold?: boolean; color: Color }>`
   font-weight: ${({ $bold }) => ($bold ? '700' : '500')};
   color: ${({ theme, color }) => theme.color[color]};
-  transform: translateY(1px);
-  vertical-align: baseline;
+  padding-top: 1.5px;
 `;
