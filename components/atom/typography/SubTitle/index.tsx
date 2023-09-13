@@ -14,10 +14,10 @@ const SubTitle = ({ children, color = 'text_500' }: Props) => {
 
 export default SubTitle;
 
-const Text = styled(TypoGraphy)<{ color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
   font-size: 12px;
   font-weight: 700;
-  line-height: 16px; /* 133.333% */
+  line-height: 16px;
   letter-spacing: 0.24px;
 `;
