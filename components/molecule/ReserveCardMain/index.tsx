@@ -12,28 +12,14 @@ export interface Props {
   gym: {
     name: string;
     location: string;
-    img: StaticImageData;
+    img: StaticImageData | string;
   };
   date: string;
   startTime: number;
   endTime: number;
 }
 
-const ReserveCardMain = ({
-  reserveKey,
-  is_used,
-  gym,
-  date,
-  startTime,
-  endTime,
-}: Props) => {
-  const onClickCancel = () => {
-    console.log(`${reserveKey} 취소`);
-  };
-
-  const onClickInfo = () => {
-    console.log(`${reserveKey} 이용 정보`);
-  };
+const ReserveCardMain = ({ is_used, gym, date, startTime, endTime }: Props) => {
   const usingTime = endTime - startTime;
   return (
     <Container>
@@ -56,16 +42,16 @@ const ReserveCardMain = ({
         )}
         {is_used ? (
           <Buttons>
-            <ButtonGhost size="fit" disabled onClick={onClickInfo}>
+            <ButtonGhost size="fit" disabled onClick={() => {}}>
               이용 정보
             </ButtonGhost>
           </Buttons>
         ) : (
           <Buttons>
-            <ButtonGhost size="fit" onClick={onClickCancel}>
+            <ButtonGhost size="fit" onClick={() => {}}>
               취소 요청
             </ButtonGhost>
-            <ButtonGhost size="fit" onClick={onClickInfo}>
+            <ButtonGhost size="fit" onClick={() => {}}>
               이용 정보
             </ButtonGhost>
           </Buttons>
@@ -81,7 +67,6 @@ const Container = styled.div`
   display: flex;
   gap: 10px;
   padding: 10px;
-  align-self: center;
 `;
 
 const ReserveInfo = styled.div<{ is_used: boolean }>`

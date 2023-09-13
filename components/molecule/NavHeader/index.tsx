@@ -12,12 +12,12 @@ const NavHeader = ({ pageName, isSaveButton }: Props) => {
   return (
     <Container>
       <LeftSection>
-        <CustomButtonBack onClick={() => {}} />
+        <ButtonBack onClick={() => {}} />
         <Title2>{pageName}</Title2>
       </LeftSection>
       {isSaveButton && (
         <SaveButton onClick={() => {}} color="text_500">
-          <Body3>저장완료</Body3>
+          <Body3>저장</Body3>
         </SaveButton>
       )}
     </Container>
@@ -26,7 +26,6 @@ const NavHeader = ({ pageName, isSaveButton }: Props) => {
 
 export default NavHeader;
 
-const CustomButtonBack = styled(ButtonBack)``;
 const Container = styled.div`
   display: flex;
   width: 100%;

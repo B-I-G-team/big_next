@@ -1,27 +1,12 @@
 import NavHeader from '@/components/molecule/NavHeader';
 import ReserveCard from '@/components/molecule/ReserveCard';
-import { useRouter } from 'next/router';
 import React from 'react';
 import { styled } from 'styled-components';
 import GymTemp from '@/public/assets/GymTemp.png';
-import { StaticImageData } from 'next/image';
 
-export interface Props {
-  reserveInfo: {
-    reserveKey: number;
-    is_used: boolean;
-    gym: {
-      name: string;
-      location: string;
-      img: StaticImageData;
-    };
-    date: string;
-    startTime: number;
-    endTime: number;
-  };
-}
+export interface Props {}
 
-const ReserveInfo = () => {
+const ReserveInfo = ({}: Props) => {
   const reserveInfo = [
     {
       reserveKey: 1,

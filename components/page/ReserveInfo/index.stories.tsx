@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react';
-import ReserveInfo from '.';
+import ReserveInfo, { Props } from '.';
 export default {
   title: 'Page/ReserveInfo',
   component: ReserveInfo,
   tags: ['autodocs'],
 };
 
-const Template: Story<any> = (args: any) => <ReserveInfo {...args} />;
+const Template: Story<Props> = (args: Props) => <ReserveInfo {...args} />;
 
 export const Default = Template.bind({});
 

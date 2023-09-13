@@ -17,10 +17,9 @@ const Small = ({ children, bold, color = 'text_500' }: Props) => (
 
 export default Small;
 
-const Text = styled(TypoGraphy)<{ $bold?: boolean; color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
   font-size: 12px;
-
   line-height: 16px;
   letter-spacing: 0.24px;
 `;
