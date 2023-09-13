@@ -6,24 +6,17 @@ import { styled } from 'styled-components';
 
 export interface Props {
   pageName: string;
-  onClickBack: () => {};
   isSaveButton?: boolean;
-  onClickSave: () => {};
 }
-const NavHeader = ({
-  pageName,
-  onClickBack,
-  isSaveButton,
-  onClickSave,
-}: Props) => {
+const NavHeader = ({ pageName, isSaveButton }: Props) => {
   return (
     <Container>
       <LeftSection>
-        <CustomButtonBack onClick={onClickBack} />
+        <CustomButtonBack onClick={() => {}} />
         <Title2>{pageName}</Title2>
       </LeftSection>
       {isSaveButton && (
-        <SaveButton onClick={onClickSave} color="text_500">
+        <SaveButton onClick={() => {}} color="text_500">
           <Body3>저장완료</Body3>
         </SaveButton>
       )}

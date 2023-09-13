@@ -27,13 +27,6 @@ const ReserveCardMain = ({
   startTime,
   endTime,
 }: Props) => {
-  const onClickCancel = () => {
-    console.log(`${reserveKey} 취소`);
-  };
-
-  const onClickInfo = () => {
-    console.log(`${reserveKey} 이용 정보`);
-  };
   const usingTime = endTime - startTime;
   return (
     <Container>
@@ -56,16 +49,16 @@ const ReserveCardMain = ({
         )}
         {is_used ? (
           <Buttons>
-            <ButtonGhost size="fit" disabled onClick={onClickInfo}>
+            <ButtonGhost size="fit" disabled onClick={() => {}}>
               이용 정보
             </ButtonGhost>
           </Buttons>
         ) : (
           <Buttons>
-            <ButtonGhost size="fit" onClick={onClickCancel}>
+            <ButtonGhost size="fit" onClick={() => {}}>
               취소 요청
             </ButtonGhost>
-            <ButtonGhost size="fit" onClick={onClickInfo}>
+            <ButtonGhost size="fit" onClick={() => {}}>
               이용 정보
             </ButtonGhost>
           </Buttons>

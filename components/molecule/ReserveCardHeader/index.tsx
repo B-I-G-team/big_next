@@ -8,13 +8,10 @@ export interface Props {
   reserveKey: number;
 }
 const ReserveCardHeader = ({ date, reserveKey }: Props) => {
-  const onClickButton = () => {
-    console.log(`${reserveKey} 상세보기`);
-  };
   return (
     <Container>
       <SubTitle>{date}</SubTitle>
-      <TextButton onClick={onClickButton} color="blue">
+      <TextButton onClick={() => {}} color="blue">
         {'상세보기 >'}
       </TextButton>
     </Container>

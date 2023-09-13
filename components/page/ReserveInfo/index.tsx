@@ -1,6 +1,5 @@
 import NavHeader from '@/components/molecule/NavHeader';
 import ReserveCard from '@/components/molecule/ReserveCard';
-import { useRouter } from 'next/router';
 import React from 'react';
 import { styled } from 'styled-components';
 import GymTemp from '@/public/assets/GymTemp.png';
@@ -72,10 +71,9 @@ const ReserveInfo = () => {
       endTime: 19,
     },
   ];
-  const router = useRouter();
   return (
     <Container>
-      <NavHeader router={router} pageName="예약내역" />
+      <NavHeader pageName="예약내역" />
       <ReserveCardBox>
         {reserveInfo.map((reserve) => (
           <ReserveCard key={reserve.reserveKey} reserveInfo={reserve} />
