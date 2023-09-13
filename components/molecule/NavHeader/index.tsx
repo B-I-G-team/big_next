@@ -1,20 +1,16 @@
 import ButtonBack from '@/components/atom/buttons/ButtonBack';
-import TextButton from '@/components/atom/buttons/TextButton';
 import Body3 from '@/components/atom/typography/Body3';
 import Title2 from '@/components/atom/typography/Title2';
-import { NextRouter, useRouter } from 'next/router';
 import React from 'react';
 import { styled } from 'styled-components';
 
 export interface Props {
-  router: NextRouter;
   pageName: string;
   onClickBack: () => {};
   isSaveButton?: boolean;
   onClickSave: () => {};
 }
 const NavHeader = ({
-  router,
   pageName,
   onClickBack,
   isSaveButton,

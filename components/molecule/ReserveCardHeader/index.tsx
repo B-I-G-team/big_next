@@ -1,6 +1,5 @@
 import TextButton from '@/components/atom/buttons/TextButton';
 import SubTitle from '@/components/atom/typography/SubTitle';
-import { Color } from '@/styles/theme';
 import React from 'react';
 import { styled } from 'styled-components';
 
