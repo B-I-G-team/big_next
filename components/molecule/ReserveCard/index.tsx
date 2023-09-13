@@ -10,7 +10,7 @@ export interface Props {
     gym: {
       name: string;
       location: string;
-      img: StaticImageData;
+      img: StaticImageData | string;
     };
     date: string;
     startTime: number;
