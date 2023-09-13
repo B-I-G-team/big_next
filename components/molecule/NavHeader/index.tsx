@@ -17,7 +17,7 @@ const NavHeader = ({ pageName, isSaveButton }: Props) => {
       </LeftSection>
       {isSaveButton && (
         <SaveButton onClick={() => {}} color="text_500">
-          <Body3>저장완료</Body3>
+          <Body3>저장</Body3>
         </SaveButton>
       )}
     </Container>

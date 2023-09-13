@@ -10,7 +10,7 @@ export interface Props {
 
 const Title1 = ({ children, color = 'text_500' }: Props) => {
   return (
-    <Text bold={true} color={color}>
+    <Text bold color={color}>
       {children}
     </Text>
   );
