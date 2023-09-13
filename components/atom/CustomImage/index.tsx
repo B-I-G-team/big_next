@@ -1,4 +1,4 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { StaticImageData } from 'next/dist/shared/lib/get-img-props';
 import Image from 'next/image';
 import React from 'react';
 import { styled } from 'styled-components';
@@ -16,7 +16,7 @@ const sizeAdjust = (size: Size) => {
   }
 };
 export interface Props {
-  src: StaticImport | string;
+  src: StaticImageData | string;
   alt: string;
   size: Size;
 }

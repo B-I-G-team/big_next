@@ -13,6 +13,8 @@ const color = {
   green: '#018263',
   gray_disabled: '#EDEDED',
   gray_hover: '#EDEDED',
+  blue_hover: '#3981EF',
+  text_500_hover: '#7F7F7F',
 };
 
 export const theme = {
