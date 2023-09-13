@@ -72,10 +72,9 @@ const ReserveInfo = () => {
       endTime: 19,
     },
   ];
-  const router = useRouter();
   return (
     <Container>
-      <NavHeader router={router} pageName="예약내역" />
+      <NavHeader pageName="예약내역" />
       <ReserveCardBox>
         {reserveInfo.map((reserve) => (
           <ReserveCard key={reserve.reserveKey} reserveInfo={reserve} />

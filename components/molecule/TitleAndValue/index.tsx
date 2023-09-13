@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export interface Props {
   title: string;
   value: string;
-  $bold_value: boolean;
+  $bold_value?: boolean;
 }
 const TitleAndValue = ({ title, value, $bold_value }: Props) => {
   return (

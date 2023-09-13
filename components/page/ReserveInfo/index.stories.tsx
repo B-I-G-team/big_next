@@ -1,6 +1,5 @@
 import { Story } from '@storybook/react';
 import ReserveInfo from '.';
-import GymTemp from '@/public/assets/GymTemp.png';
 export default {
   title: 'Page/ReserveInfo',
   component: ReserveInfo,
