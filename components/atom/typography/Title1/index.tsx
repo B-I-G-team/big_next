@@ -18,7 +18,7 @@ const Title1 = ({ children, color = 'text_500' }: Props) => {
 
 export default Title1;
 
-const Text = styled(TypoGraphy)<{ color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
   font-size: 16px;
   line-height: 20px;

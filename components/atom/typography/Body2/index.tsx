@@ -17,7 +17,7 @@ const Body2 = ({ children, bold, color = 'text_500' }: Props) => (
 
 export default Body2;
 
-const Text = styled(TypoGraphy)<{ $bold?: boolean; color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
   font-size: 16px;
   line-height: 20px;

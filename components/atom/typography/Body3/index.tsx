@@ -17,11 +17,9 @@ const Body3 = ({ children, bold, color = 'text_500' }: Props) => (
 
 export default Body3;
 
-const Text = styled(TypoGraphy)<{ $bold?: boolean; color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
   font-size: 14px;
-  font-weight: ${({ $bold }) => ($bold ? 700 : 500)};
   line-height: 20px;
   letter-spacing: -0.15px;
-  color: ${({ theme, color }) => theme.color[color]};
 `;

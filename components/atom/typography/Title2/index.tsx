@@ -18,13 +18,10 @@ const Title2 = ({ children, color = 'text_500' }: Props) => {
 
 export default Title2;
 
-const Text = styled(TypoGraphy)<{ color: Color }>`
+const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
-  display: inline-flex;
-  align-items: center;
   font-size: 14px;
   font-style: normal;
   line-height: 20px;
   letter-spacing: 0.13px;
-  color: ${({ theme, color }) => theme.color[color]};
 `;
