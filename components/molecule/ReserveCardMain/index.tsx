@@ -19,14 +19,7 @@ export interface Props {
   endTime: number;
 }
 
-const ReserveCardMain = ({
-  reserveKey,
-  is_used,
-  gym,
-  date,
-  startTime,
-  endTime,
-}: Props) => {
+const ReserveCardMain = ({ is_used, gym, date, startTime, endTime }: Props) => {
   const usingTime = endTime - startTime;
   return (
     <Container>
