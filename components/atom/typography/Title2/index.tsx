@@ -11,7 +11,7 @@ export interface Props {
 const Title2 = ({ children, color = 'text_500' }: Props) => {
   return (
     <Text bold color={color}>
-      <div>{children}</div>
+      {children}
     </Text>
   );
 };
@@ -20,8 +20,6 @@ export default Title2;
 
 const Text = styled(TypoGraphy)`
   font-family: 'Gmarket Sans TTF';
-  display: inline-flex;
-  align-items: center;
   font-size: 14px;
   font-style: normal;
   line-height: 20px;
