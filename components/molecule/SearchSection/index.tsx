@@ -5,12 +5,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export interface Props {}
+/**
+ *
+ * 검색 후 'Enter' 키 입력 시 검색결과 출력
+ */
 const SearchSection = () => {
   const [value, setValue] = useState('');
   const [title, setTitle] = useState('');
   return (
     <Container>
-      <Title1>{`"${title}" 검색 결과`}</Title1>
+      {title && <Title1>{`"${title}" 검색 결과`}</Title1>}
       <Section>
         <PrimaryInput
           onKeyDown={(e) => {
@@ -28,6 +32,7 @@ const SearchSection = () => {
         ></PrimaryInput>
         <Select
           defaultValue="인기순"
+          width="40%"
           options={['인기순', '조회순', '좋아요순']}
           onChange={() => {}}
         />
@@ -38,7 +43,9 @@ const SearchSection = () => {
 
 export default SearchSection;
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 10px;
+`;
 
 const Section = styled.div`
   display: flex;
