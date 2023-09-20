@@ -4,15 +4,27 @@ import SearchIcon from '@/components/icons/SearchIcon';
 export interface Props {
   prefixed?: boolean;
   placeholder: string;
-  value: string;
+  value?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  onSubmit?: React.FormEventHandler<HTMLInputElement> | undefined;
 }
 
-const PrimaryInput = ({ prefixed, placeholder, onChange, value }: Props) => {
+const PrimaryInput = ({
+  prefixed,
+  placeholder,
+  onChange,
+  value,
+  onSubmit,
+}: Props) => {
   return (
     <Container>
       {prefixed && <SearchIcon />}
-      <Input onChange={onChange} value={value} placeholder={placeholder} />
+      <Input
+        onSubmit={onSubmit}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      />
     </Container>
   );
 };
