@@ -5,7 +5,6 @@ import { styled } from 'styled-components';
 
 export interface Props {
   date: string;
-  reserveKey: number;
 }
 const ReserveCardHeader = ({ date }: Props) => {
   return (

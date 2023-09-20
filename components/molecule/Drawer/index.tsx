@@ -1,6 +1,5 @@
 import DrawerButton from '@/components/atom/buttons/DrawerButton';
 import Small from '@/components/atom/typography/Small';
-import DrawerIcon from '@/components/icons/DrawerIcon';
 import React, { ReactChild, useState } from 'react';
 import styled from 'styled-components';
 
@@ -21,9 +20,7 @@ const Drawer = ({ title, children }: Props) => {
           }}
         />
       </TitleBox>
-      <DrawBox className="DrawBox" is_draw={draw}>
-        {children}
-      </DrawBox>
+      <DrawBox is_draw={draw}>{children}</DrawBox>
     </Container>
   );
 };
