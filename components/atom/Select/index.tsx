@@ -7,12 +7,13 @@ export interface Props {
   defaultValue: string;
   options: string[];
   onChange: () => void;
+  width?: string;
 }
-const Select = ({ defaultValue, onChange, options }: Props) => {
+const Select = ({ defaultValue, onChange, options, width = '100%' }: Props) => {
   const [draw, setDraw] = useState(false);
   const [value, setValue] = useState(defaultValue);
   return (
-    <Container>
+    <Container width={width}>
       <MainSection
         onClick={() => {
           setDraw((prev) => !prev);
@@ -41,8 +42,8 @@ const Select = ({ defaultValue, onChange, options }: Props) => {
 
 export default Select;
 
-const Container = styled.div`
-  width: 50%;
+const Container = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
 `;
 
 const MainSection = styled.div`
@@ -60,6 +61,7 @@ const ChildSection = styled.div<{ $isdraw: boolean }>`
   display: ${({ $isdraw }) => ($isdraw ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 const Child = styled.div`
