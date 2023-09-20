@@ -8,7 +8,7 @@ export interface Props {
 }
 const DrawerButton = ({ draw, onClick }: Props) => {
   return (
-    <DrawerBox draw={draw} onClick={onClick}>
+    <DrawerBox $draw={draw} onClick={onClick}>
       <DrawerIcon />
     </DrawerBox>
   );
@@ -16,10 +16,10 @@ const DrawerButton = ({ draw, onClick }: Props) => {
 
 export default DrawerButton;
 
-const DrawerBox = styled.button<{ draw: boolean }>`
+const DrawerBox = styled.button<{ $draw: boolean }>`
   cursor: pointer;
   border: none;
-  transform: ${({ draw }) => (draw ? 'rotateX(180deg)' : '')};
+  transform: ${({ $draw }) => ($draw ? 'rotateX(180deg)' : '')};
   background-color: ${({ theme }) => theme.color.white};
   &:hover {
     opacity: 0.8;

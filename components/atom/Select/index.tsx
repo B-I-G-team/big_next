@@ -6,7 +6,7 @@ import Body3 from '../typography/Body3';
 export interface Props {
   defaultValue: string;
   options: string[];
-  onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  onChange: () => void;
 }
 const Select = ({ defaultValue, onChange, options }: Props) => {
   const [draw, setDraw] = useState(false);
@@ -21,7 +21,7 @@ const Select = ({ defaultValue, onChange, options }: Props) => {
         <Body3>{value}</Body3>
         <DrawerButton draw={draw} onClick={() => {}} />
       </MainSection>
-      <ChildSection isdraw={draw}>
+      <ChildSection $isdraw={draw}>
         {options.map((item, index) => (
           <Child
             key={index}
@@ -49,25 +49,29 @@ const MainSection = styled.div`
   display: flex;
   cursor: pointer;
   gap: 6px;
-  padding: 12px 6px;
-  border: 1px solid ${({ theme }) => theme.color.border_100};
+  border: 1px solid ${({ theme }) => theme.color.red_500};
+  border-radius: 2px;
   justify-content: center;
   align-items: center;
+  padding: 5px 0px;
 `;
 
-const ChildSection = styled.div<{ isdraw: boolean }>`
-  display: ${({ isdraw }) => (isdraw ? 'flex' : 'none')};
+const ChildSection = styled.div<{ $isdraw: boolean }>`
+  display: ${({ $isdraw }) => ($isdraw ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
 `;
 
 const Child = styled.div`
   cursor: pointer;
+  padding: 5px 0px;
   width: 100%;
-  padding: 12px 6px;
   text-align: center;
   border: 1px solid ${({ theme }) => theme.color.border_100};
+  border-top: none;
   &:hover {
     background-color: ${({ theme }) => theme.color.border_100};
+    border: 1px solid ${({ theme }) => theme.color.border_100};
+    border-color: ${({ theme }) => theme.color.red_500};
   }
 `;

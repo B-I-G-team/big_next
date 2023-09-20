@@ -14,4 +14,7 @@ export const Default = Template.bind({});
 Default.args = {
   defaultValue: '인기순',
   options: ['인기순', '최신순', '좋아요순'],
+  onChange: () => {
+    console.log('change');
+  },
 };

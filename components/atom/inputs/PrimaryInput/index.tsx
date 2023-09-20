@@ -6,7 +6,7 @@ export interface Props {
   placeholder: string;
   value?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
-  onSubmit?: React.FormEventHandler<HTMLInputElement> | undefined;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined;
 }
 
 const PrimaryInput = ({
@@ -14,13 +14,13 @@ const PrimaryInput = ({
   placeholder,
   onChange,
   value,
-  onSubmit,
+  onKeyDown,
 }: Props) => {
   return (
     <Container>
       {prefixed && <SearchIcon />}
       <Input
-        onSubmit={onSubmit}
+        onKeyDown={onKeyDown}
         onChange={onChange}
         value={value}
         placeholder={placeholder}
