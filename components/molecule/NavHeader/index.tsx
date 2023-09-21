@@ -7,8 +7,9 @@ import { styled } from 'styled-components';
 export interface Props {
   pageName: string;
   isSaveButton?: boolean;
+  onSave?: () => void;
 }
-const NavHeader = ({ pageName, isSaveButton }: Props) => {
+const NavHeader = ({ pageName, isSaveButton, onSave }: Props) => {
   return (
     <Container>
       <LeftSection>
@@ -16,7 +17,7 @@ const NavHeader = ({ pageName, isSaveButton }: Props) => {
         <Title2>{pageName}</Title2>
       </LeftSection>
       {isSaveButton && (
-        <SaveButton onClick={() => {}} color="text_500">
+        <SaveButton onClick={onSave} color="text_500">
           <Body3>저장</Body3>
         </SaveButton>
       )}
