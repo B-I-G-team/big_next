@@ -16,10 +16,6 @@ const PayKakaoButton = ({ active, onClick }: Props) => {
 
 export default PayKakaoButton;
 
-const HiddenCheckbox = styled.input`
-  display: none;
-`;
-
 const Button = styled.div<{ active?: boolean }>`
   display: flex;
   justify-content: center;
