@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Small from '../typography/Small';
 import ClockIcon from '@/components/icons/ClockIcon';
 import TextButton from '../buttons/TextButton';
-
 export interface Props {
   type: 'Date' | 'Time';
   is_icon: boolean;
   placeholder: string;
 }
+
 const Picker = ({ type, is_icon, placeholder }: Props) => {
   const [value, setValue] = useState(placeholder);
   const [activePicker, setActivePicker] = useState(false);
@@ -35,8 +35,8 @@ const Picker = ({ type, is_icon, placeholder }: Props) => {
         {is_icon && <ClockIcon />}
       </MainSection>
       <PickSection activePicker={activePicker}>
-        <TopSection>
-          <TimeSection>
+        <TimeSection>
+          <TimeArticle>
             {hourArr.map((item, index) => (
               <Time
                 key={index}
@@ -48,8 +48,8 @@ const Picker = ({ type, is_icon, placeholder }: Props) => {
                 {item}
               </Time>
             ))}
-          </TimeSection>
-          <TimeSection>
+          </TimeArticle>
+          <TimeArticle>
             {minArr.map((item, index) => (
               <Time
                 key={index}
@@ -61,8 +61,8 @@ const Picker = ({ type, is_icon, placeholder }: Props) => {
                 {item}
               </Time>
             ))}
-          </TimeSection>
-        </TopSection>
+          </TimeArticle>
+        </TimeSection>
         <SaveSection>
           <TextButton
             onClick={() => {
@@ -100,10 +100,10 @@ const MainSection = styled.div<{ activePicker: boolean }>`
 const PickSection = styled.div<{ activePicker: boolean }>`
   display: ${({ activePicker }) => (activePicker ? 'flex' : 'none')};
   flex-direction: column;
-  height: 100px;
+  height: 120px;
 `;
 
-const TimeSection = styled.div`
+const TimeArticle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -113,11 +113,12 @@ const TimeSection = styled.div`
 const Time = styled.div<{ activeTime: boolean }>`
   cursor: pointer;
   text-align: center;
+  transition: 200ms;
   background-color: ${({ theme, activeTime }) =>
     activeTime ? theme.color.blue_hover : theme.color.white};
 `;
 
-const TopSection = styled.div`
+const TimeSection = styled.div`
   display: flex;
   height: 90%;
 `;
