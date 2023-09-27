@@ -9,7 +9,7 @@ const KakaoLoginButton = ({}: Props) => {
   return (
     <Button href={`${HOST}/auth/kakao`}>
       <KakaoIcon />
-      <ButtonText>카카오페이</ButtonText>
+      <ButtonText>카카오 로그인</ButtonText>
     </Button>
   );
 };
