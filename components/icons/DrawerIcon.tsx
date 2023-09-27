@@ -1,5 +1,4 @@
 import React from 'react';
-
 const DrawerIcon = () => {
   return (
     <svg
@@ -17,5 +16,4 @@ const DrawerIcon = () => {
     </svg>
   );
 };
-
 export default DrawerIcon;

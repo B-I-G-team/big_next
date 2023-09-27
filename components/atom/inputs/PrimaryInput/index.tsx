@@ -4,15 +4,27 @@ import SearchIcon from '@/components/icons/SearchIcon';
 export interface Props {
   prefixed?: boolean;
   placeholder: string;
-  value: string;
+  value?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement> | undefined;
 }
 
-const PrimaryInput = ({ prefixed, placeholder, onChange, value }: Props) => {
+const PrimaryInput = ({
+  prefixed,
+  placeholder,
+  onChange,
+  value,
+  onKeyDown,
+}: Props) => {
   return (
     <Container>
       {prefixed && <SearchIcon />}
-      <Input onChange={onChange} value={value} placeholder={placeholder} />
+      <Input
+        onKeyDown={onKeyDown}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+      />
     </Container>
   );
 };

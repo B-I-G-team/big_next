@@ -89,7 +89,4 @@ const ReserveCardBox = styled.div`
   overflow-y: scroll;
 
   background-color: ${({ theme }) => theme.color.border_100};
-  &::-webkit-scrollbar {
-    width: 0px;
-  }
 `;
