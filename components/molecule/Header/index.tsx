@@ -4,20 +4,36 @@ import TextButton from '@/components/atom/buttons/TextButton';
 import Logo from '@/components/atom/Logo';
 import MenuButton from '@/components/atom/buttons/MenuButton';
 import { useRouter } from 'next/navigation';
+import { useUserInfoQuery } from '@/query-hooks/common';
+import ProfileImage from '@/components/atom/ProfileImage';
 
 const Header = () => {
+  const { data: user } = useUserInfoQuery();
+
   const router = useRouter();
   return (
     <Container>
       <MenuButton onClick={() => {}} />
       <StyledLogo />
-      <TextButton
-        onClick={() => {
-          router.push('/login');
-        }}
-      >
-        로그인
-      </TextButton>
+      {!user?.id && (
+        <TextButton
+          onClick={() => {
+            router.push('/login');
+          }}
+        >
+          로그인
+        </TextButton>
+      )}
+      {user?.id && (
+        <ProfileImage
+          size="sm"
+          src={{
+            src: user.profileImage,
+            width: 640,
+            height: 640,
+          }}
+        />
+      )}
     </Container>
   );
 };
