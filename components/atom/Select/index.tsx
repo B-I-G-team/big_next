@@ -55,7 +55,7 @@ const MainSection = styled.div`
   border-radius: 2px;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 80px;
   padding: 5px 0px;
 `;
 
@@ -64,7 +64,7 @@ const ChildSection = styled.div<{ $isdraw: boolean }>`
   position: absolute;
   flex-direction: column;
   align-items: center;
-  width: 100px;
+  width: 80px;
   background-color: ${({ theme }) => theme.color.white};
 `;
 

@@ -12,8 +12,8 @@ const Template: Story<Props> = (args: Props) => <Select {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  defaultValue: '인기순',
-  options: ['인기순', '최신순', '좋아요순'],
+  defaultValue: '인기',
+  options: ['인기', '최신', '좋아요'],
   onChange: () => {
     console.log('change');
   },
