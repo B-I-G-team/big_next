@@ -9,11 +9,11 @@ export interface Props {
   onChange: () => void;
   width?: string;
 }
-const Select = ({ defaultValue, onChange, options, width = '100%' }: Props) => {
+const Select = ({ defaultValue, onChange, options }: Props) => {
   const [draw, setDraw] = useState(false);
   const [value, setValue] = useState(defaultValue);
   return (
-    <Container width={width}>
+    <Container>
       <MainSection
         onClick={() => {
           setDraw((prev) => !prev);
@@ -23,18 +23,21 @@ const Select = ({ defaultValue, onChange, options, width = '100%' }: Props) => {
         <DrawerButton draw={draw} onClick={() => {}} />
       </MainSection>
       <ChildSection $isdraw={draw}>
-        {options.map((item, index) => (
-          <Child
-            key={index}
-            onClick={() => {
-              setValue(item);
-              setDraw((prev) => !prev);
-              onChange();
-            }}
-          >
-            <Body3>{item}</Body3>
-          </Child>
-        ))}
+        {options.map(
+          (item, index) =>
+            item === value || (
+              <Child
+                key={index}
+                onClick={() => {
+                  setValue(item);
+                  setDraw((prev) => !prev);
+                  onChange();
+                }}
+              >
+                <Body3>{item}</Body3>
+              </Child>
+            ),
+        )}
       </ChildSection>
     </Container>
   );
@@ -42,9 +45,7 @@ const Select = ({ defaultValue, onChange, options, width = '100%' }: Props) => {
 
 export default Select;
 
-const Container = styled.div<{ width: string }>`
-  width: ${({ width }) => width};
-`;
+const Container = styled.div``;
 
 const MainSection = styled.div`
   display: flex;
@@ -54,13 +55,16 @@ const MainSection = styled.div`
   border-radius: 2px;
   justify-content: center;
   align-items: center;
+  width: 100px;
   padding: 5px 0px;
 `;
 
 const ChildSection = styled.div<{ $isdraw: boolean }>`
   display: ${({ $isdraw }) => ($isdraw ? 'flex' : 'none')};
+  position: absolute;
   flex-direction: column;
   align-items: center;
+  width: 100px;
   background-color: ${({ theme }) => theme.color.white};
 `;
 

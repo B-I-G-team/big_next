@@ -32,7 +32,6 @@ const SearchSection = () => {
         ></PrimaryInput>
         <Select
           defaultValue="인기순"
-          width="40%"
           options={['인기순', '조회순', '좋아요순']}
           onChange={() => {}}
         />
