@@ -3,13 +3,21 @@ import styled from 'styled-components';
 import TextButton from '@/components/atom/buttons/TextButton';
 import Logo from '@/components/atom/Logo';
 import MenuButton from '@/components/atom/buttons/MenuButton';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const router = useRouter();
   return (
     <Container>
       <MenuButton onClick={() => {}} />
       <StyledLogo />
-      <TextButton onClick={() => {}}>로그인</TextButton>
+      <TextButton
+        onClick={() => {
+          router.push('/login');
+        }}
+      >
+        로그인
+      </TextButton>
     </Container>
   );
 };
