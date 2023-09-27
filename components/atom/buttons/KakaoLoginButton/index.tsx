@@ -1,14 +1,13 @@
+import { HOST } from '@/api/config';
 import KakaoIcon from '@/components/icons/KakaoIcon';
 import React from 'react';
 import styled from 'styled-components';
 
-export interface Props {
-  onClick?: () => void;
-}
+export interface Props {}
 
-const KakaoLoginButton = ({ onClick }: Props) => {
+const KakaoLoginButton = ({}: Props) => {
   return (
-    <Button onClick={onClick}>
+    <Button href={`${HOST}/auth/kakao`}>
       <KakaoIcon />
       <ButtonText>카카오페이</ButtonText>
     </Button>
@@ -17,7 +16,7 @@ const KakaoLoginButton = ({ onClick }: Props) => {
 
 export default KakaoLoginButton;
 
-const Button = styled.button`
+const Button = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +28,8 @@ const Button = styled.button`
   width: 100%;
   height: 35px;
   transition: 200ms;
+
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -42,4 +43,6 @@ const ButtonText = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 16px; /* 133.333% */
+
+  color: ${({ theme }) => theme.color.text_500};
 `;

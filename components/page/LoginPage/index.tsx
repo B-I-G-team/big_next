@@ -41,7 +41,7 @@ const Wrapper = styled.div`
 
   gap: 30px;
 
-  margin-top: 40px;
+  margin-top: 60px;
 
   padding: 20px;
 `;
