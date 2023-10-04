@@ -7,21 +7,21 @@ type ImageSize = 'sm' | 'md' | 'lg';
 export interface Props {
   src: string | StaticImageData;
   size: ImageSize;
-  onClick?: () => {};
+  onClick?: () => void;
   active?: boolean;
 }
 
 const sizeAdjust = (size: ImageSize) => {
   switch (size) {
     case 'sm':
-      return '28px';
+      return '28';
     case 'md':
-      return '38px';
+      return '38';
     case 'lg':
-      return '100px';
+      return '100';
 
     default:
-      return '38px';
+      return '38';
   }
 };
 
@@ -49,6 +49,8 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
       src={src}
       alt="profile image"
       size={size}
+      width={sizeAdjust(size)}
+      height={sizeAdjust(size)}
       $active={active}
       onClick={onClick}
     />
@@ -58,9 +60,6 @@ const ProfileImage = ({ src, size, active = false, onClick }: Props) => {
 export default ProfileImage;
 
 const StyledImage = styled(Image)<{ size: ImageSize; $active: boolean }>`
-  width: ${({ size }) => sizeAdjust(size)};
-  height: ${({ size }) => sizeAdjust(size)};
-
   border-radius: 50%;
 
   border: 1px solid

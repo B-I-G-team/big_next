@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export const HOST = 'http://localhost:14080';
+export const HOST = 'http://rasp.jaejun.me:14080';
+// export const HOST = 'http://localhost:14080';
 
 export const axiosWithToken = axios.create({
   baseURL: `${HOST}`,

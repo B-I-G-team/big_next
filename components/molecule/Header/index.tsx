@@ -26,6 +26,9 @@ const Header = () => {
       )}
       {user?.id && (
         <ProfileImage
+          onClick={() => {
+            router.push('/mypage');
+          }}
           size="sm"
           src={{
             src: user.profileImage,
