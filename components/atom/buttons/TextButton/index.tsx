@@ -5,7 +5,7 @@ import { Color } from '@/styles/theme';
 export interface Props {
   children: ReactChild;
   onClick: () => void;
-  color: Color;
+  color?: Color;
 }
 
 const TextButton = ({ onClick, children, color = 'text_500' }: Props) => {

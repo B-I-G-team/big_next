@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export interface Props {
   IconComponent: () => React.JSX.Element;
   text: string;
-  onClick?: () => {};
+  onClick?: () => void;
 }
 
 /**

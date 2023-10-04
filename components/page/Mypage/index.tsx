@@ -5,12 +5,15 @@ import LogoutIcon from '@/components/icons/LogoutIcon';
 import Header from '@/components/molecule/Header';
 import IconAndText from '@/components/molecule/IconAndText';
 import MypageHeader from '@/components/molecule/MypageHeader';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import styled from 'styled-components';
 
 export interface Props {}
 
 const Mypage = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <Header />
@@ -27,7 +30,14 @@ const Mypage = () => {
 
           <Section>
             <Body3 bold>기타</Body3>
-            <IconAndText IconComponent={LogoutIcon} text="로그아웃" />{' '}
+            <IconAndText
+              IconComponent={LogoutIcon}
+              text="로그아웃"
+              onClick={() => {
+                localStorage.removeItem('access_token');
+                router.push('/');
+              }}
+            />
           </Section>
         </SectionContainer>
       </Content>

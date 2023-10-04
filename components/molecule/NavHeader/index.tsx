@@ -1,6 +1,8 @@
 import ButtonBack from '@/components/atom/buttons/ButtonBack';
 import Body3 from '@/components/atom/typography/Body3';
 import Title2 from '@/components/atom/typography/Title2';
+import { useRouter } from 'next/navigation';
+
 import React from 'react';
 import { styled } from 'styled-components';
 
@@ -9,10 +11,12 @@ export interface Props {
   isSaveButton?: boolean;
 }
 const NavHeader = ({ pageName, isSaveButton }: Props) => {
+  const router = useRouter();
+
   return (
     <Container>
       <LeftSection>
-        <ButtonBack onClick={() => {}} />
+        <ButtonBack onClick={() => router.push('/')} />
         <Title2>{pageName}</Title2>
       </LeftSection>
       {isSaveButton && (

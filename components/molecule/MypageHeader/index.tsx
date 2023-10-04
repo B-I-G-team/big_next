@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Profile from '../Profile';
-import ImageFile from '@/public/assets/ProfileTemp.jpeg';
 import GrayButton from '@/components/atom/buttons/GrayButton';
+import { useUserInfoQuery } from '@/query-hooks/common';
 
 const MypageHeader = () => {
+  const { data } = useUserInfoQuery();
   return (
     <Container>
-      <Profile src={ImageFile} userName="김대환" />
+      <Profile
+        src={data ? data.profileImage : ''}
+        userName={data ? data.nickname : ''}
+      />
       <GrayButton onClick={() => {}}>프로필 보기</GrayButton>
     </Container>
   );
