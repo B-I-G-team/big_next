@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 
 export const useUserInfoQuery = () => {
   return useQuery<UserInfo>({
-    queryKey: ['user-info'],
+    queryKey: ['user-info', localStorage.getItem('access_token')],
     queryFn: () => api.getUserInfo(),
     retry: false,
   });
